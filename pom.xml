@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.rkq</groupId>
+    <artifactId>jexp-root</artifactId>
+    <packaging>pom</packaging>
+    <version>${jexp-version}</version>
+
+    <properties>
+        <jexp-version>0.1</jexp-version>
+        <slf4j-api-version>1.7.12</slf4j-api-version>
+        <slf4j-log4j12-version>1.7.12</slf4j-log4j12-version>
+        <log4j-version>1.2.17</log4j-version>
+        <guava-version>18.0</guava-version>
+        <spring-core-version>4.2.0.RELEASE</spring-core-version>
+        <netty-all-version>4.0.30.Final</netty-all-version>
+        <jewelcli-version>0.8.9</jewelcli-version>
+        <junit-version>4.12</junit-version>
+        <mockito-all-version>1.10.19</mockito-all-version>
+        <easymock-version>3.3.1</easymock-version>
+        <tika-core-version>1.10</tika-core-version>
+        <tika-parsers-version>1.10</tika-parsers-version>
+        <maven-assembly-plugin-version>2.5.5</maven-assembly-plugin-version>
+    </properties>
+
+    <modules>
+        <module>ut</module>
+        <module>jse</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--unit testing-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito-all-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.easymock</groupId>
+                <artifactId>easymock</artifactId>
+                <version>${easymock-version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!--logging-->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j-log4j12-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j-version}</version>
+            </dependency>
+
+            <!--frameworks-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring-core-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty-all-version}</version>
+            </dependency>
+
+            <!--common utilities-->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava-version}</version>
+            </dependency>
+
+            <!--command line parser-->
+            <dependency>
+                <groupId>com.lexicalscope.jewelcli</groupId>
+                <artifactId>jewelcli</artifactId>
+                <version>${jewelcli-version}</version>
+            </dependency>
+
+            <!--rich content parsing-->
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-core</artifactId>
+                <version>${tika-core-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-parsers</artifactId>
+                <version>${tika-parsers-version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven-assembly-plugin-version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
