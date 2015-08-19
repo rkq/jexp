@@ -7,10 +7,12 @@
     <groupId>com.github.rkq</groupId>
     <artifactId>jexp-root</artifactId>
     <packaging>pom</packaging>
-    <version>${jexp-version}</version>
+    <version>0.1</version>
 
     <properties>
-        <jexp-version>0.1</jexp-version>
+        <!--To remove message: [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <slf4j-api-version>1.7.12</slf4j-api-version>
         <slf4j-log4j12-version>1.7.12</slf4j-log4j12-version>
         <log4j-version>1.2.17</log4j-version>
@@ -18,9 +20,16 @@
         <spring-core-version>4.2.0.RELEASE</spring-core-version>
         <netty-all-version>4.0.30.Final</netty-all-version>
         <jewelcli-version>0.8.9</jewelcli-version>
+
         <junit-version>4.12</junit-version>
         <mockito-all-version>1.10.19</mockito-all-version>
         <easymock-version>3.3.1</easymock-version>
+        <embedded-redis-version>0.6</embedded-redis-version>
+        <embedded-mongodb-version>4.2.1</embedded-mongodb-version>
+        <killbill-embeddeddb-mysql-version>0.5</killbill-embeddeddb-mysql-version>
+        <jetty-embedded-version>6.1.26</jetty-embedded-version>
+        <tomcat-embed-core-version>8.0.24</tomcat-embed-core-version>
+
         <tika-core-version>1.10</tika-core-version>
         <tika-parsers-version>1.10</tika-parsers-version>
         <maven-assembly-plugin-version>2.5.5</maven-assembly-plugin-version>
@@ -51,6 +60,33 @@
                 <artifactId>easymock</artifactId>
                 <version>${easymock-version}</version>
                 <scope>test</scope>
+            </dependency>
+
+            <!--embedded stuff for testing-->
+            <dependency>
+                <groupId>com.github.kstyrc</groupId>
+                <artifactId>embedded-redis</artifactId>
+                <version>${embedded-redis-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.svenkubiak</groupId>
+                <artifactId>embedded-mongodb</artifactId>
+                <version>${embedded-mongodb-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-embeddeddb-mysql</artifactId>
+                <version>${killbill-embeddeddb-mysql-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-core</artifactId>
+                <version>${tomcat-embed-core-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-embedded</artifactId>
+                <version>${jetty-embedded-version}</version>
             </dependency>
 
             <!--logging-->

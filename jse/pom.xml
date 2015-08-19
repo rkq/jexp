@@ -5,11 +5,10 @@
     <parent>
         <artifactId>jexp-root</artifactId>
         <groupId>com.github.rkq</groupId>
-        <version>${jexp-version}</version>
+        <version>0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>jexp-jse</artifactId>
-    <version>${jexp-version}</version>
 
 </project>
